@@ -1,0 +1,57 @@
+@reference "../index.css";
+
+.pitcher-avail-table {
+  @apply table-auto rounded-lg shadow mx-auto my-4;
+
+  thead {
+    @apply bg-gray-50 border-b-2 border-gray-200;
+
+    th {
+      @apply p-3;
+    }
+
+    .table-icon {
+      @apply text-4xl inline-block px-2 text-gray-900;
+    }
+
+    .header-label {
+      @apply text-sm font-semibold tracking-wide text-gray-600 hidden md:inline;
+    }
+  }
+  tbody {
+    @apply divide-y divide-gray-100;
+
+    tr {
+      @apply even:bg-gray-50 odd:bg-white;
+
+      td {
+        @apply p-3 text-sm text-gray-700;
+
+        .table-icon {
+          @apply text-xl mx-1 inline-block;
+        }
+        .large-table-number {
+          @apply text-xl font-semibold;
+        }
+      }
+    }
+  }
+  .status-tag {
+    @apply p-2 text-sm font-medium uppercase tracking-wider rounded-lg hidden sm:inline;
+
+    &.available {
+      @apply bg-green-100/50 text-green-800;
+    }
+
+    &.partial {
+      @apply bg-yellow-100/50 text-yellow-800;
+    }
+    &.not-available {
+      @apply bg-red-100/50 text-red-800;
+    }
+  }
+}
+
+.center-cell-content {
+  @apply flex flex-col items-center justify-center;
+}

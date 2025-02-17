@@ -1,0 +1,7 @@
+@reference "../index.css";
+
+.bullpen-availability {
+  h2 {
+    @apply text-2xl font-semibold text-gray-900 py-4;
+  }
+}

@@ -1,0 +1,16 @@
+@reference "../index.css";
+
+.center-cell-content {
+  @apply flex flex-col items-center justify-center;
+}
+.jersey-text-container {
+  @apply flex flex-col items-center justify-center absolute w-[70px] h-[70px];
+
+  .jersey-number {
+    @apply text-2xl font-semibold;
+  }
+
+  .jersey-name {
+    @apply text-xs font-semibold;
+  }
+}

@@ -1,0 +1,26 @@
+@reference "../index.css";
+
+.partial-availability {
+  @apply flex flex-col justify-center items-center;
+
+  .pitches-remaining {
+    @apply text-xl font-semibold;
+  }
+}
+.availability-label {
+  @apply text-sm text-gray-400 md:inline hidden;
+}
+.available-pitcher {
+  @apply flex flex-col justify-center items-center;
+}
+
+.no-availability {
+  @apply flex flex-col justify-center items-center;
+  .days-remaining {
+    @apply text-xl font-semibold;
+  }
+
+  .days-label {
+    @apply text-sm text-gray-400;
+  }
+}

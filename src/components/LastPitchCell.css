@@ -1,0 +1,21 @@
+@reference "../index.css";
+
+.last-pitched-cell {
+  @apply flex flex-row items-center justify-around;
+
+  .days-since {
+    @apply text-xl;
+  }
+
+  .labels {
+    @apply flex flex-col justify-evenly h-[70px];
+
+    .days-since-label {
+      @apply text-sm text-gray-700;
+    }
+
+    .date-pitched {
+      @apply text-xs text-gray-500;
+    }
+  }
+}
