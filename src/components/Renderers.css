@@ -2,7 +2,7 @@
 
 /* Status Renderer*/
 .status-tag {
-  @apply p-1 text-sm font-medium uppercase tracking-wider rounded-lg hidden sm:inline;
+  @apply rounded-lg p-1 text-sm font-medium tracking-wider uppercase;
 
   &.available {
     @apply bg-green-100/50 text-green-800;
@@ -26,7 +26,7 @@
   }
 
   .labels {
-    @apply flex flex-col justify-evenly h-[70px];
+    @apply flex h-[70px] flex-col justify-evenly;
 
     .days-since-label {
       @apply text-sm text-gray-700;

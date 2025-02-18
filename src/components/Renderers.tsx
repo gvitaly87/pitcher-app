@@ -20,11 +20,11 @@ export function RenderPlayerStatus(props: { status: string }) {
   return (
     <div className="player-status">
       {props.status === "Available" ? (
-        <GrStatusGood className="text-4xl inline-block px-2 text-green-500" />
+        <GrStatusGood className="inline-block px-2 text-4xl text-green-500" />
       ) : props.status === "Partial" ? (
-        <GrStatusWarning className="text-4xl inline-block px-2 text-yellow-500" />
+        <GrStatusWarning className="inline-block px-2 text-4xl text-yellow-500" />
       ) : (
-        <MdOutlineCancel className="text-4xl inline-block px-2 text-red-500" />
+        <MdOutlineCancel className="inline-block px-2 text-4xl text-red-500" />
       )}
       <span className={"status-tag " + formatPlayerStatus(props.status)}>
         {props.status}
@@ -36,7 +36,7 @@ export function RenderPlayerStatus(props: { status: string }) {
 export function RenderPitchCount(props: { pitchCount: number }) {
   return (
     <>
-      <CiBaseball className="text-2xl mx-2" />
+      <CiBaseball className="mx-2 text-2xl" />
       <span className="text-xl">{props.pitchCount}</span>
     </>
   );
@@ -70,7 +70,7 @@ function RenderDescription(props: {
   return (
     <div className="pitcher-availability">
       <div className="icon">
-        <props.Icon className="inline-block text-2xl mx-1" />
+        <props.Icon className="mx-1 inline-block text-2xl" />
         {props.displayNumber && <span>{props.displayNumber}</span>}
       </div>
       <div className="label">{props.description}</div>

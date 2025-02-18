@@ -4,7 +4,7 @@
   @apply flex flex-col items-center justify-center;
 }
 .jersey-text-container {
-  @apply flex flex-col items-center justify-center absolute w-[70px] h-[70px];
+  @apply absolute flex h-[70px] w-[70px] flex-col items-center justify-center;
 
   .jersey-number {
     @apply text-2xl font-semibold;
@@ -13,4 +13,15 @@
   .jersey-name {
     @apply text-xs font-semibold;
   }
+}
+& .available {
+  @apply text-green-200;
+}
+
+& .partial {
+  @apply text-yellow-200;
+}
+
+& .not-available {
+  @apply text-red-200;
 }

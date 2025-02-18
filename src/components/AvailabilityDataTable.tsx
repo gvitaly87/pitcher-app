@@ -34,16 +34,16 @@ export default function AvailabilityDataTable(props: { players: Player[] }) {
             <span className="header-label">Status</span>
           </th>
           <th>
-            <MdOutlineEditNote className="table-icon" />
-            <span className="header-label">Description</span>
+            <CiBaseball className="inline-block px-2 text-4xl" />
+            <span className="header-label">Pitch Count</span>
           </th>
           <th>
             <IoCalendarNumberOutline className="table-icon" />
             <span className="header-label">Last Pitched</span>
           </th>
           <th>
-            <CiBaseball className="text-4xl inline-block px-2 " />
-            <span className="header-label">Pitch Count</span>
+            <MdOutlineEditNote className="table-icon" />
+            <span className="header-label">Description</span>
           </th>
         </tr>
       </thead>
@@ -53,6 +53,7 @@ export default function AvailabilityDataTable(props: { players: Player[] }) {
             <td>
               <JerseyIcon
                 fill="#ddd"
+                status={player.status}
                 width="70"
                 number={player.number}
                 name={player.name}
@@ -62,14 +63,16 @@ export default function AvailabilityDataTable(props: { players: Player[] }) {
               <RenderPlayerStatus status={player.status} />
             </td>
             <td>
-              <RenderPitcherDescription player={player} />
+              <CenterCell>
+                <RenderPitchCount pitchCount={player.pitchCount} />
+              </CenterCell>
             </td>
             <td className="md:w[auto] w[140px]">
               <RenderPitchDate lastPitched={player.lastPitched} />
             </td>
             <td>
               <CenterCell>
-                <RenderPitchCount pitchCount={player.pitchCount} />
+                <RenderPitcherDescription player={player} />
               </CenterCell>
             </td>
           </tr>

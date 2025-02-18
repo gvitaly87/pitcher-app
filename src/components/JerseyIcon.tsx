@@ -1,16 +1,28 @@
 import "./JerseyIcon.css";
 import { getLastName } from "../utils/formatters";
+import { formatPlayerStatus } from "../utils/formatters";
 
 type JerseyIconProps = {
   fill: string;
+  status: string;
   width: string;
   number: number;
   name: string;
 };
 export default function JerseyIcon(props: JerseyIconProps) {
+  let fill = props.fill;
+  if (props.status === "Available") {
+    fill = "hsl(140.6, 60%, 20%)";
+  } else if (props.status === "Not Available") {
+    fill = "hsl(0, 100%, 30%)";
+  } else if (props.status === "Partial") {
+    fill = "hsl(55, 100%, 35%)";
+  }
   return (
     <div className="center-cell-content">
-      <div className="jersey-text-container">
+      <div
+        className={"jersey-text-container " + formatPlayerStatus(props.status)}
+      >
         {props.name && (
           <div className="jersey-name">{getLastName(props.name)}</div>
         )}
@@ -33,15 +45,15 @@ export default function JerseyIcon(props: JerseyIconProps) {
         <g clipPath="url(#clip0_4_2)">
           <path
             d="M217 0.00551462C217.166 0.0018421 217.333 0 217.5 0C237.658 0 254 26.8629 254 60V120H217V0.00551462Z"
-            fill={props.fill}
+            fill={fill}
           />
           <path
             d="M37 0.00551462C36.8336 0.0018421 36.6669 0 36.5 0C16.3416 0 0 26.8629 0 60V120H37V0.00551462Z"
-            fill={props.fill}
+            fill={fill}
           />
           <path
             d="M37 0H86.7658C93.6652 12.0223 109.308 20.4138 127.5 20.4138C145.692 20.4138 161.335 12.0223 168.234 0H217V220C217 239.372 210.879 257.315 200.466 272H53.5336C43.1206 257.315 37 239.372 37 220V0Z"
-            fill={props.fill}
+            fill={fill}
           />
           <g opacity="0.3" filter="url(#filter0_d_4_2)">
             <path

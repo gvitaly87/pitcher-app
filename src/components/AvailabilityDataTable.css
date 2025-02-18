@@ -1,43 +1,43 @@
 @reference "../index.css";
 
 .pitcher-avail-table {
-  @apply table-auto rounded-lg shadow mx-auto my-4;
+  @apply mx-auto my-4 table-auto rounded-lg shadow;
 
   thead {
-    @apply bg-gray-50 border-b-2 border-gray-200;
+    @apply border-b-2 border-gray-200 bg-gray-50;
 
     th {
       @apply p-3;
     }
 
     .table-icon {
-      @apply text-4xl inline-block px-2 text-gray-900;
+      @apply inline-block px-2 text-4xl text-gray-900;
     }
 
     .header-label {
-      @apply text-sm font-semibold tracking-wide text-gray-600 hidden md:inline;
+      @apply hidden text-sm font-semibold tracking-wide text-gray-600 md:inline;
     }
   }
   tbody {
     @apply divide-y divide-gray-100;
 
     tr {
-      @apply even:bg-gray-50 odd:bg-white;
+      @apply odd:bg-white even:bg-gray-50;
 
       td {
         @apply p-3 text-sm text-gray-700;
 
-        .table-icon {
-          @apply text-xl mx-1 inline-block;
+        .icon {
+          @apply mx-1 flex justify-center text-xl;
         }
-        .large-table-number {
+        .large-number {
           @apply text-xl font-semibold;
         }
       }
     }
   }
   .status-tag {
-    @apply p-2 text-sm font-medium uppercase tracking-wider rounded-lg hidden sm:inline;
+    @apply hidden rounded-lg p-2 text-sm font-medium tracking-wider uppercase sm:inline;
 
     &.available {
       @apply bg-green-100/50 text-green-800;

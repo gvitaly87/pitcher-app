@@ -1,12 +1,12 @@
 @reference "../index.css";
 
 .pitcher-avail-card {
-  @apply flex flex-row shadow-md p-4 rounded-2xl mx-3;
+  @apply mx-3 flex flex-row rounded-2xl bg-white p-4 shadow-md;
 
   .pitcher-availability {
-    @apply flex flex-row justify-center items-center;
+    @apply flex flex-row items-center justify-center;
   }
   .icon {
-    @apply text-3xl mx-2 font-semibold;
+    @apply mx-2 text-3xl font-semibold;
   }
 }
