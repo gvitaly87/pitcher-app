@@ -1,0 +1,41 @@
+@reference "../index.css";
+
+/* Status Renderer*/
+.status-tag {
+  @apply p-1 text-sm font-medium uppercase tracking-wider rounded-lg hidden sm:inline;
+
+  &.available {
+    @apply bg-green-100/50 text-green-800;
+  }
+
+  &.partial {
+    @apply bg-yellow-100/50 text-yellow-800;
+  }
+  &.not-available {
+    @apply bg-red-100/50 text-red-800;
+  }
+}
+
+/* Pitch Date Renderer */
+
+.last-pitched-cell {
+  @apply flex flex-row items-center justify-around gap-2;
+
+  .days-since {
+    @apply text-xl;
+  }
+
+  .labels {
+    @apply flex flex-col justify-evenly h-[70px];
+
+    .days-since-label {
+      @apply text-sm text-gray-700;
+    }
+
+    .date-pitched {
+      @apply text-xs text-gray-500;
+    }
+  }
+}
+
+/* Pitch Count Render */

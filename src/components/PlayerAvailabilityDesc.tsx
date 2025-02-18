@@ -45,7 +45,7 @@ export default function PlayerAvailabilityDesc(props: { player: Player }) {
   return (
     <div className="available-pitcher">
       <FaRegCalendarCheck className="text-xl" />{" "}
-      <span className="availability-label">fullly available</span>
+      <span className="availability-label">fully available</span>
     </div>
   );
 }

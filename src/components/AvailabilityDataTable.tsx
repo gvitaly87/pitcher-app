@@ -2,16 +2,19 @@ import "./AvailabilityDataTable.css";
 
 import { Player } from "../data/players";
 
-import { formatPlayerStatus } from "../utils/formatters";
 import JerseyIcon from "./JerseyIcon";
-import PlayerAvailabilityDesc from "./PlayerAvailabilityDesc";
-import LastPitchCell from "./LastPitchCell";
+
+import {
+  RenderPitchCount,
+  RenderPlayerStatus,
+  CenterCell,
+  RenderPitchDate,
+  RenderPitcherDescription,
+} from "./Renderers";
 
 import { PiBaseballCap } from "react-icons/pi";
 import { GrStatusGood } from "react-icons/gr";
-import { GrStatusWarning } from "react-icons/gr";
 import { MdOutlineEditNote } from "react-icons/md";
-import { MdOutlineCancel } from "react-icons/md";
 import { IoCalendarNumberOutline } from "react-icons/io5";
 import { CiBaseball } from "react-icons/ci";
 
@@ -56,32 +59,18 @@ export default function AvailabilityDataTable(props: { players: Player[] }) {
               />
             </td>
             <td>
-              <div className="center-cell-content">
-                {player.status === "Available" ? (
-                  <GrStatusGood className="text-4xl inline-block px-2 text-green-500" />
-                ) : player.status === "Partial" ? (
-                  <GrStatusWarning className="text-4xl inline-block px-2 text-yellow-500" />
-                ) : (
-                  <MdOutlineCancel className="text-4xl inline-block px-2 text-red-500" />
-                )}
-                <span
-                  className={"status-tag " + formatPlayerStatus(player.status)}
-                >
-                  {player.status}
-                </span>
-              </div>
+              <RenderPlayerStatus status={player.status} />
             </td>
             <td>
-              <PlayerAvailabilityDesc player={player} />
+              <RenderPitcherDescription player={player} />
             </td>
             <td className="md:w[auto] w[140px]">
-              <LastPitchCell lastPitched={player.lastPitched} />
+              <RenderPitchDate lastPitched={player.lastPitched} />
             </td>
             <td>
-              <div className="center-cell-content">
-                <CiBaseball className="table-icon" />
-                <span className="large-table-number">{player.pitchCount}</span>
-              </div>
+              <CenterCell>
+                <RenderPitchCount pitchCount={player.pitchCount} />
+              </CenterCell>
             </td>
           </tr>
         ))}

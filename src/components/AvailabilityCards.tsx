@@ -2,15 +2,15 @@ import "./AvailabilityCards.css";
 
 import { Player } from "../data/players";
 
-// import { formatPlayerStatus } from "../utils/formatters";
+import {
+  RenderPlayerStatus,
+  RenderPitchCount,
+  RenderPitchDateString,
+  CenterCell,
+  RenderPitcherDescription,
+} from "./Renderers";
 
-// import { PiBaseballCap } from "react-icons/pi";
-// import { GrStatusGood } from "react-icons/gr";
-// import { GrStatusWarning } from "react-icons/gr";
-// import { MdOutlineEditNote } from "react-icons/md";
-// import { MdOutlineCancel } from "react-icons/md";
-// import { IoCalendarNumberOutline } from "react-icons/io5";
-// import { CiBaseball } from "react-icons/ci";
+import { formatDate } from "../utils/formatters";
 
 import JerseyIcon from "./JerseyIcon";
 
@@ -29,17 +29,27 @@ export default function AvailabilityCards(props: { players: Player[] }) {
 function AvailabilityCard(props: { player: Player }) {
   const player = props.player;
   return (
-    <div key={player.number}>
-      <JerseyIcon
-        fill="#ddd"
-        width="70"
-        number={player.number}
-        name={player.name}
-      />
-      <div>{player.status}</div>
-      <div>description</div>
-      <div>last pitch</div>
-      <div>pitch count</div>
+    <div key={player.number} className="pitcher-avail-card">
+      <CenterCell>
+        <JerseyIcon
+          fill="#ddd"
+          width="70"
+          number={player.number}
+          name={player.name}
+        />
+      </CenterCell>
+      <div className="flex flex-col grow">
+        <div className="flex flex-row justify-between p-2">
+          <RenderPlayerStatus status={player.status} />
+          <RenderPitchDateString date={formatDate(player.lastPitched)} />
+        </div>
+        <div className="flex flex-col justify-between">
+          <RenderPitcherDescription player={player} />
+          <div className="flex flex-row justify-end">
+            <RenderPitchCount pitchCount={player.pitchCount} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
