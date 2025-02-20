@@ -1,19 +1,21 @@
 import "./Coach.css";
 
-import BullpenAvailability from "../components/BullpenAvailability";
-import TodaysProgram from "../components/TodaysProgram";
-// import SideNav from "../components/SideNav";
+import Sidebar from "../components/Sidebar";
+import { Outlet } from "react-router-dom";
+import NavBar from "../components/NavBar";
 
 export default function Coach() {
   return (
-    <>
-      {/* <aside>
-        <SideNav />
-      </aside> */}
-      <main>
-        <BullpenAvailability />
-        <TodaysProgram />
-      </main>
-    </>
+    <div className="main-bg">
+      <header className="text-text w-full">
+        <NavBar />
+      </header>
+      <div className="flex">
+        <Sidebar />
+        <main className="p-7">
+          <Outlet />
+        </main>
+      </div>
+    </div>
   );
 }
