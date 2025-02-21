@@ -1,6 +1,7 @@
 import "./AvailabilityCards.css";
 
 import { Player } from "../data/players";
+import { formatPlayerStatus } from "../utils/formatters";
 
 import {
   RenderPlayerStatus,
@@ -18,7 +19,7 @@ export default function AvailabilityCards(props: { players: Player[] }) {
   const players = props.players;
 
   return (
-    <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-4 sm:grid-cols-1 lg:grid-cols-2">
       {players.map((player) => (
         <AvailabilityCard player={player} />
       ))}
@@ -29,11 +30,14 @@ export default function AvailabilityCards(props: { players: Player[] }) {
 function AvailabilityCard(props: { player: Player }) {
   const player = props.player;
   return (
-    <div key={player.number} className="pitcher-avail-card">
+    <div
+      key={player.number}
+      className={"pitcher-avail-card " + formatPlayerStatus(player.status)}
+    >
       <CenterCell>
         <JerseyIcon
           status={player.status}
-          fill="#ddd"
+          fill="#fff"
           width="70"
           number={player.number}
           name={player.name}
@@ -44,7 +48,7 @@ function AvailabilityCard(props: { player: Player }) {
           <RenderPlayerStatus status={player.status} />
           <RenderPitchDateString date={formatDate(player.lastPitched)} />
         </div>
-        <div className="flex flex-col justify-between">
+        <div className="block pl-4">
           <RenderPitcherDescription player={player} />
           <div className="flex flex-row justify-end">
             <RenderPitchCount pitchCount={player.pitchCount} />

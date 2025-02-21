@@ -1,7 +1,7 @@
 @reference "../index.css";
 
 .pitcher-avail-table {
-  @apply mx-auto my-4 table-auto rounded-lg shadow;
+  @apply w-full table-auto rounded-lg p-6 shadow;
 
   thead {
     @apply border-b-2 border-gray-200 bg-gray-50;

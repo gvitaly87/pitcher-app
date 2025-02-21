@@ -58,7 +58,7 @@ export function RenderPitchDate(props: { lastPitched: Date }) {
 }
 
 export const RenderPitchDateString = (props: { date: string }) => (
-  <div className="text-sm font-light text-gray-500">{props.date}</div>
+  <div className="text-md font-light text-gray-300">{props.date}</div>
 );
 
 // Renders an icon, as well as a number and its description

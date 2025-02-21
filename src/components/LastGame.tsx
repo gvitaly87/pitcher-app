@@ -8,7 +8,7 @@ export default function LastGame(props: LastGameProps) {
   return (
     <div className="from-brand-800 to-brand-900 from:0% col-span-2 flex flex-row rounded-xl bg-gradient-to-br p-4 transition-shadow hover:from-15%">
       <div className="flex grow flex-col">
-        <h3 className="font-emphasis text-text text-lg font-semibold">
+        <h3 className="font-emphasis text-brand-100 text-lg font-semibold">
           <GiBaseballBat size={24} className="mr-2 inline-block" />
           Last Game
         </h3>

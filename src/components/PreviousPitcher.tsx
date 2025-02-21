@@ -16,7 +16,7 @@ export default function PreviousPitcher(props: PreviousPitcherProps) {
   return (
     <div className="from-brand-800 to-brand-900 from:0% col-span-2 flex flex-row rounded-xl bg-gradient-to-br p-4 transition-shadow hover:from-15%">
       <div className="flex grow flex-col">
-        <h3 className="font-emphasis text-text text-lg font-semibold">
+        <h3 className="font-emphasis text-brand-100 text-lg font-semibold">
           Previous Pitcher
         </h3>
         <div className="font-emphasis text-text py-2 text-center text-lg font-semibold">

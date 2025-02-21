@@ -1,10 +1,21 @@
-@reference "../index.css";
+@import "../index.css";
 
 .pitcher-avail-card {
-  @apply mx-3 flex flex-row rounded-2xl bg-white p-4 shadow-md;
+  @apply mx-3 flex flex-row justify-start rounded-2xl p-4 shadow-md;
+
+  &.available {
+    @apply from-brand-900 bg-gradient-to-br from-65% via-green-600 via-75% to-emerald-800 to-85%;
+  }
+
+  &.partial {
+    @apply from-brand-900 bg-gradient-to-br from-65% via-yellow-500 via-75% to-amber-700 to-85%;
+  }
+  &.not-available {
+    @apply from-brand-900 bg-gradient-to-br from-65% via-rose-800 via-75% to-red-700 to-85%;
+  }
 
   .pitcher-availability {
-    @apply flex flex-row items-center justify-center;
+    @apply flex flex-row items-center;
   }
   .icon {
     @apply mx-2 text-3xl font-semibold;
