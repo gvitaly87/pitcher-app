@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Gruppo&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -24,6 +25,9 @@
   --color-brand-800: oklch(36.3% 0.053 174.58);
   --color-brand-900: oklch(23.16% 0.031 173.5);
   --color-brand-950: oklch(17.4% 0.019 176.63);
+
+  --font-heading: "Crimson Text", "serif";
+  --font-emphasis: "Gruppo", serif;
 }
 
 .color-primary {

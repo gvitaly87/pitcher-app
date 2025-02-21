@@ -62,7 +62,7 @@ const LOGOUT: SidebarItem = {
 export default function Sidebar() {
   return (
     <aside className="flex w-64 justify-center p-5 pt-8">
-      <nav className="flex flex-col space-y-6">
+      <nav className="flex flex-col space-y-10">
         <div className="bg-brand-800 flex w-12 flex-col items-center justify-center rounded-full opacity-90">
           <ul>{SIDEBAR_ITEMS.map((item) => RenderSidebarLink({ item }))}</ul>
         </div>

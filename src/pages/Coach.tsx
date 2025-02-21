@@ -12,9 +12,7 @@ export default function Coach() {
       </header>
       <div className="flex">
         <Sidebar />
-        <main className="p-7">
-          <Outlet />
-        </main>
+        <Outlet />
       </div>
     </div>
   );

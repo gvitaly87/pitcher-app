@@ -1,8 +1,1 @@
 @reference "../index.css";
-
-.bullpen-availability {
-  @apply bg-green-100 pb-6;
-  h2 {
-    @apply my-2 bg-white py-4 text-2xl font-semibold text-gray-900;
-  }
-}

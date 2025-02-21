@@ -29,10 +29,10 @@ export default function AvailabilityDataTable(props: { players: Player[] }) {
             <PiBaseballCap className="table-icon" />
             <span className="header-label">Pitcher</span>
           </th>
-          <th>
+          {/* <th>
             <GrStatusGood className="table-icon" />
             <span className="header-label">Status</span>
-          </th>
+          </th> */}
           <th>
             <CiBaseball className="inline-block px-2 text-4xl" />
             <span className="header-label">Pitch Count</span>
@@ -59,9 +59,9 @@ export default function AvailabilityDataTable(props: { players: Player[] }) {
                 name={player.name}
               />
             </td>
-            <td>
+            {/* <td>
               <RenderPlayerStatus status={player.status} />
-            </td>
+            </td> */}
             <td>
               <CenterCell>
                 <RenderPitchCount pitchCount={player.pitchCount} />

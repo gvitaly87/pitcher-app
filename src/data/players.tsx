@@ -6,6 +6,7 @@ export type Player = {
   nextPitch?: Date;
   pitchCount: number;
   remainingPitches?: number;
+  favorite?: boolean;
 };
 
 const players: Player[] = [
@@ -15,6 +16,7 @@ const players: Player[] = [
     status: "Available",
     lastPitched: new Date("2025/2/10"),
     pitchCount: 70,
+    favorite: false,
   },
   {
     name: "Carlos Reyes",
@@ -22,6 +24,7 @@ const players: Player[] = [
     status: "Available",
     lastPitched: new Date("2025/2/11"),
     pitchCount: 35,
+    favorite: true,
   },
   {
     name: "Derek Jones",
@@ -29,6 +32,7 @@ const players: Player[] = [
     status: "Available",
     lastPitched: new Date("2025/2/12"),
     pitchCount: 80,
+    favorite: true,
   },
   {
     name: "Mark Thompson",
@@ -36,6 +40,7 @@ const players: Player[] = [
     status: "Available",
     lastPitched: new Date("2025/2/13"),
     pitchCount: 45,
+    favorite: false,
   },
   {
     name: "Luke Williams",
@@ -44,6 +49,7 @@ const players: Player[] = [
     lastPitched: new Date("2025/2/12"),
     pitchCount: 30,
     remainingPitches: 25,
+    favorite: false,
   },
   {
     name: "Ethan Jones",
@@ -52,6 +58,7 @@ const players: Player[] = [
     lastPitched: new Date("2025/2/12"),
     nextPitch: new Date("2025/2/23"),
     pitchCount: 85,
+    favorite: false,
   },
   {
     name: "Noah Brown",
@@ -59,6 +66,7 @@ const players: Player[] = [
     status: "Available",
     lastPitched: new Date("2025/2/11"),
     pitchCount: 50,
+    favorite: true,
   },
   {
     name: "Mason Davis",
